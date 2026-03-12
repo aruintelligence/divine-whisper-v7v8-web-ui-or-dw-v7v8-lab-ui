@@ -1,5 +1,3 @@
-<button onclick="navigator.clipboard.writeText(document.getElementById('v7v8-frontend-readme').innerText)">Copy Full README.md</button>
-
 <div id="v7v8-frontend-readme" style="white-space: pre-wrap; font-family: monospace; max-height: 400px; overflow-y: auto; padding: 16px; border: 1px solid #444; border-radius: 8px; background: #0d1117; color: #e6edf3;">
 # Divine Whisper v7→v8 Live Lab UI  
 **Interactive Frontend: Task Input + Real-Time 3D μ-Field Visualization**
