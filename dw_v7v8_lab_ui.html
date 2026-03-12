@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+
+<body>
+
+<h2>Divine Whisper AI Lab</h2>
+
+<input id="taskBox" placeholder="Enter task">
+<button onclick="runTask()">Run</button>
+
+<div id="fieldPlot"></div>
+
+<script>
+
+async function runTask(){
+
+const task = document.getElementById("taskBox").value
+
+const res = await fetch("http://localhost:8000/run",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify(task)
+})
+
+const data = await res.json()
+
+drawField(data.field)
+
+}
+
+function drawField(field){
+
+const plot = {
+z:field,
+type:"surface"
+}
+
+Plotly.newPlot("fieldPlot",[plot])
+
+}
+
+</script>
+
+</body>
+</html>
